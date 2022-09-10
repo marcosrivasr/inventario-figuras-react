@@ -33,6 +33,7 @@ export default function Edit() {
         <NameInput inputValue={item.name} />
       </Form>
       {item.name}
+      {item.picture && <img src={item.picture} alt="" width={200} />}
     </div>
   );
 }

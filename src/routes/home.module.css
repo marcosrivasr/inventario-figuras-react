@@ -1,0 +1,8 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 1020px;
+  justify-content: space-between;
+  margin: 50px auto;
+  background-image: url(./repisa.png);
+}

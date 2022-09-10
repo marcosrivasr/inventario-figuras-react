@@ -1,17 +1,17 @@
-import { Link } from "react-router-dom";
+import Funko from "../components/funko";
 import { useAppContext } from "../store/store";
+import style from "./home.module.css";
 
 export default function Home() {
   const store = useAppContext();
 
   return (
     <div>
-      Home
-      {store.items.map((item) => (
-        <div>
-          <Link to={"edit/" + item.id}>{item.name}</Link>
-        </div>
-      ))}
+      <div className={style.container}>
+        {store.items.map((item) => (
+          <Funko key={item.id} item={item} />
+        ))}
+      </div>
     </div>
   );
 }

@@ -1,0 +1,22 @@
+.nav {
+  background-color: black;
+}
+.nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  display: flex;
+}
+
+.item {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+}
+
+.item:hover {
+  color: black;
+  background-color: white;
+}

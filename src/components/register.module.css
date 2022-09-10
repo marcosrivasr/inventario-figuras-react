@@ -1,0 +1,58 @@
+input[type="text"],
+select,
+label {
+  display: block;
+  padding: 10px 0;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 1.5rem;
+}
+
+.formContainer {
+  width: 300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+label {
+  margin-top: 10px;
+}
+
+.preview {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  margin: 20px 0;
+}
+
+input[type="text"],
+select {
+  border-radius: 3px;
+  outline: none;
+  border: solid 1px #ccc;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.btnPicture {
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 3px;
+  padding: 10px;
+  width: 100%;
+  background-color: rgb(72, 112, 229);
+  color: White;
+}
+.btnSubmit {
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 3px;
+  padding: 10px;
+  width: 100%;
+  background-color: rgb(54, 249, 109);
+  color: black;
+  cursor: pointer;
+}
