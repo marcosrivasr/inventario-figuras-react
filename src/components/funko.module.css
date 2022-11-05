@@ -6,3 +6,7 @@
 .hide {
   opacity: 0.3;
 }
+
+.shadow {
+  filter: drop-shadow(0 0 10px cyan);
+}

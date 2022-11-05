@@ -34,11 +34,18 @@ export default function Store({ children }) {
     return res;
   }
 
-  function changeOrder(posI, posF) {
+  function changeOrder(idI, idF) {
     const tmp = [...items];
     console.log("items antes", [...tmp]);
+    const posI = items.findIndex((i) => i.id === idI);
+    const posF = items.findIndex((i) => i.id === idF);
     console.log(tmp[posI], tmp[posF]);
-    [tmp[posI], tmp[posF]] = [tmp[posF], tmp[posI]];
+
+    //[tmp[posI], tmp[posF]] = [tmp[posF], tmp[posI]];
+    const tmpElement = { ...tmp[posI] };
+    tmp[posI] = { ...tmp[posF] };
+    tmp[posF] = { ...tmpElement };
+
     console.log("items despues", [...tmp]);
     setItems([...tmp]);
   }

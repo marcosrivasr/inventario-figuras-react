@@ -18,6 +18,7 @@ export default function Funko({ item, index }) {
       ref.current.addEventListener("drop", drop);
       ref.current.addEventListener("dragover", dragOver);
       ref.current.addEventListener("dragenter", dragEnter);
+      ref.current.addEventListener("dragleave", dragLeave);
     }
 
     return () => {
@@ -30,7 +31,7 @@ export default function Funko({ item, index }) {
 
   function dragStart(e) {
     console.log("drag start", index);
-    e.dataTransfer.setData("text/plain", index.toString());
+    e.dataTransfer.setData("text/plain", item.id);
 
     setTimeout(() => {
       ref.current.classList.add(style.hide);
@@ -46,11 +47,12 @@ export default function Funko({ item, index }) {
   //const dropMemoized = useCallbac();
   function drop(e, dragElement) {
     e.preventDefault();
-    const indexI = parseInt(e.dataTransfer.getData("text/plain"));
-    const indexF = index;
+    const idI = e.dataTransfer.getData("text/plain");
+    const idF = item.id;
 
-    console.log(indexI, indexF);
-    store.changeOrder(indexI, indexF);
+    console.log(idI, idF);
+    store.changeOrder(idI, idF);
+    ref.current.classList.remove(style.shadow);
   }
   function dragOver(e) {
     e.preventDefault();
@@ -58,6 +60,12 @@ export default function Funko({ item, index }) {
   }
   function dragEnter(e) {
     e.preventDefault();
+    ref.current.classList.add(style.shadow);
+    //console.log("dragEnter");
+  }
+  function dragLeave(e) {
+    e.preventDefault();
+    ref.current.classList.remove(style.shadow);
     //console.log("dragEnter");
   }
   return (
