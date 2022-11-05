@@ -2,3 +2,7 @@
   margin-top: 74px;
   margin-bottom: 51px;
 }
+
+.hide {
+  opacity: 0.3;
+}

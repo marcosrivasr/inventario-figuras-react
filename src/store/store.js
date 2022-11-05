@@ -6,6 +6,7 @@ const AppContext = createContext({
   updateItem: (updatedItem) => {},
   removeItem: (id) => {},
   getItem: (id) => {},
+  changeOrder: (posI, posF) => {},
 });
 
 export default function Store({ children }) {
@@ -33,6 +34,15 @@ export default function Store({ children }) {
     return res;
   }
 
+  function changeOrder(posI, posF) {
+    const tmp = [...items];
+    console.log("items antes", [...tmp]);
+    console.log(tmp[posI], tmp[posF]);
+    [tmp[posI], tmp[posF]] = [tmp[posF], tmp[posI]];
+    console.log("items despues", [...tmp]);
+    setItems([...tmp]);
+  }
+
   return (
     <AppContext.Provider
       value={{
@@ -41,6 +51,7 @@ export default function Store({ children }) {
         updateItem,
         removeItem,
         getItem,
+        changeOrder,
       }}
     >
       {children}

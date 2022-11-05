@@ -26,11 +26,16 @@ export default function Register() {
         picture,
         state,
       };
+      console.log("Hola");
       store.addNewItem(newItem);
       navigate("/");
     },
-    debugForm: false,
+    debugForm: true,
   });
+
+  function handleClick() {
+    console.log("click");
+  }
   return (
     <div className={style.formContainer}>
       <Form>
@@ -40,7 +45,12 @@ export default function Register() {
         <StateInput />
         <label>Picture</label>
         <PictureInput />
-        <input className={style.btnSubmit} type="submit" value="Create" />
+        <input
+          onClick={handleClick}
+          className={style.btnSubmit}
+          type="submit"
+          value="Create"
+        />
       </Form>
     </div>
   );

@@ -11,6 +11,7 @@ async function validatePicture(picture, instance) {
     console.log("checking picture");
     await new Promise((resolve) => setTimeout(resolve, 500));
     // All names are valid, so return a false error
+    console.log("picture ok");
     return false;
   }, 500);
 }

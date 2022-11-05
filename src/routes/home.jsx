@@ -8,8 +8,8 @@ export default function Home() {
   return (
     <div>
       <div className={style.container}>
-        {store.items.map((item) => (
-          <Funko key={item.id} item={item} />
+        {store.items.map((item, index) => (
+          <Funko key={item.id} item={item} index={index} />
         ))}
       </div>
     </div>
