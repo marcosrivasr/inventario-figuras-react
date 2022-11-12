@@ -34,7 +34,7 @@ export default function Register() {
   });
 
   function handleClick() {
-    console.log("click");
+    console.trace("click");
   }
   return (
     <div className={style.formContainer}>

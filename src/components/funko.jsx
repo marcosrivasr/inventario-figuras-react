@@ -13,18 +13,18 @@ export default function Funko({ item, index }) {
 
   useEffect(() => {
     if (ref.current) {
-      ref.current.addEventListener("dragstart", dragStart);
+      /* ref.current.addEventListener("dragstart", dragStart);
       ref.current.addEventListener("dragend", dragEnd);
       ref.current.addEventListener("drop", drop);
       ref.current.addEventListener("dragover", dragOver);
       ref.current.addEventListener("dragenter", dragEnter);
-      ref.current.addEventListener("dragleave", dragLeave);
+      ref.current.addEventListener("dragleave", dragLeave); */
     }
 
     return () => {
       if (ref.current) {
-        ref.current.removeEventListener("dragstart", dragStart);
-        ref.current.removeEventListener("drop", drop);
+        /* ref.current.removeEventListener("dragstart", dragStart);
+        ref.current.removeEventListener("drop", drop); */
       }
     };
   }, [index]);
@@ -69,7 +69,17 @@ export default function Funko({ item, index }) {
     //console.log("dragEnter");
   }
   return (
-    <div className={style.container} draggable={true} ref={ref}>
+    <div
+      className={style.container}
+      draggable={true}
+      ref={ref}
+      onDragStart={dragStart}
+      onDrop={drop}
+      onDragOver={dragOver}
+      onDragEnd={dragEnd}
+      onDragLeave={dragLeave}
+      onDragEnter={dragEnter}
+    >
       <Link to={"edit/" + item.id}>
         <img src={item.picture} height={355} alt="" />
       </Link>
