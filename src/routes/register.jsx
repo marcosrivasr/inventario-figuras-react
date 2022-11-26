@@ -6,6 +6,7 @@ import PictureInput from "../components/pictureInput";
 import StateInput from "../components/stateinput";
 
 import style from "../components/register.module.css";
+import common from "../components/common.module.css";
 
 export default function Register() {
   const store = useAppContext();
@@ -39,15 +40,13 @@ export default function Register() {
   return (
     <div className={style.formContainer}>
       <Form>
-        <label>Name of Funko</label>
         <NameInput />
-        <label>State of Funko</label>
         <StateInput />
-        <label>Picture</label>
+
         <PictureInput />
         <input
           onClick={handleClick}
-          className={style.btnSubmit}
+          className={common.btnSubmit}
           type="submit"
           value="Create"
         />

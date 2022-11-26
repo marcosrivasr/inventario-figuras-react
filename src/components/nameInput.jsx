@@ -22,13 +22,14 @@ export default function NameInput({ inputValue }) {
     validate: validateName,
   });
   return (
-    <>
+    <div>
+      <label>Name of Funko</label>
       <input type={"text"} {...getInputProps({ value })} />{" "}
       {isValidating ? (
         <em>Validating...</em>
       ) : isTouched && error ? (
         <em>{error}</em>
       ) : null}
-    </>
+    </div>
   );
 }

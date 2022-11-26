@@ -2,6 +2,10 @@ import { useForm, useField, splitFormProps } from "react-form";
 
 const options = [
   {
+    id: "none",
+    title: "Select status...",
+  },
+  {
     id: "purchased",
     title: "Comprado",
   },
@@ -40,12 +44,20 @@ export default function StateInput(props) {
   }
 
   return (
-    <select name="state" {...rest} value={value} onChange={handleSelectChange}>
-      {options.map((option) => (
-        <option key={option.id} value={option.id}>
-          {option.title}
-        </option>
-      ))}
-    </select>
+    <div>
+      <label>State of Funko</label>
+      <select
+        name="state"
+        {...rest}
+        value={value}
+        onChange={handleSelectChange}
+      >
+        {options.map((option) => (
+          <option key={option.id} value={option.id}>
+            {option.title}
+          </option>
+        ))}
+      </select>
+    </div>
   );
 }

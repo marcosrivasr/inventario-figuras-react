@@ -1,0 +1,32 @@
+.btnPicture {
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 3px;
+  padding: 10px;
+  width: 100%;
+  background-color: rgb(72, 112, 229);
+  color: White;
+}
+.btnSubmit {
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 3px;
+  padding: 10px;
+  width: 100%;
+  background-color: rgb(54, 249, 109);
+  color: black;
+  cursor: pointer;
+}
+.btnDelete {
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 3px;
+  padding: 10px;
+  width: 100%;
+  background-color: rgb(249, 54, 54);
+  color: white;
+  cursor: pointer;
+}

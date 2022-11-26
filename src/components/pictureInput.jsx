@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { useForm, useField, splitFormProps } from "react-form";
 import style from "./register.module.css";
+import common from "../components/common.module.css";
 
 async function validatePicture(picture, instance) {
   if (!picture) {
@@ -52,7 +53,8 @@ export default function PictureInput() {
   }
 
   return (
-    <>
+    <div>
+      <label>Picture</label>
       <input
         ref={fileInputRef}
         name="picture"
@@ -66,7 +68,7 @@ export default function PictureInput() {
         name="picture"
         {...getInputProps()}
       />
-      <button className={style.btnPicture} onClick={handleClick}>
+      <button className={common.btnPicture} onClick={handleClick}>
         Select image
       </button>
       {isValidating ? (
@@ -77,6 +79,6 @@ export default function PictureInput() {
       <div className={style.preview}>
         <img ref={imageRef} src="" alt="" width="200" />
       </div>
-    </>
+    </div>
   );
 }

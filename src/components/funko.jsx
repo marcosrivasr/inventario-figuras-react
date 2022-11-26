@@ -81,7 +81,12 @@ export default function Funko({ item, index }) {
       onDragEnter={dragEnter}
     >
       <Link to={"edit/" + item.id}>
-        <img src={item.picture} height={355} alt="" />
+        <img
+          src={item.picture}
+          height={355}
+          alt=""
+          className={item.state === "whishlist" ? style.gray : null}
+        />
       </Link>
     </div>
   );
